@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
 
-  root 'questions#index'
+  root 'static_pages#home'
   get 'login' => 'sessions#login'
   post 'login' => 'sessions#create'
   delete '/logout',

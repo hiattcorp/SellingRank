@@ -31,9 +31,9 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <% is_current_page = current_page?(root_path) || current_page?(questions_path) ? 'active' : '' %>
+          <% is_current_page = current_page?(root_path) || current_page?(home_path) ? 'active' : '' %>
           <li class="<%= is_current_page %>">
-            <%= link_to 'Questions', root_path %>
+            <%= link_to 'Questions', "" %>
           </li>
           <li class="<%= current_page?(about_path) ? 'active' : '' %>"><%= link_to 'About', about_path %></li>
           <li class="<%= current_page?(contact_path) ? 'active' : '' %>"><%= link_to 'Contact', contact_path %></li>
