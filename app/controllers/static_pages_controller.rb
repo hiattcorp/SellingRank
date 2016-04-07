@@ -6,6 +6,5 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-
   end
 end
