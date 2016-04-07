@@ -15,8 +15,6 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
 
-  get 'contact' => 'static_pages#contact'
-
   root 'questions#index'
   get 'login' => 'sessions#login'
   post 'login' => 'sessions#create'
