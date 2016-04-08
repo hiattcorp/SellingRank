@@ -41,11 +41,7 @@
           <li class="<%= current_page?(about_path) ? 'active' : '' %>"><%= link_to 'About', about_path %></li>
           <li class="<%= current_page?(contact_path) ? 'active' : '' %>"><%= link_to 'Contact', contact_path %></li>
         </ul>
-        <ul>
-          <ul class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-default navbar-btn">Log in</button>
-            <button type="button" class="btn btn-default navbar-btn">Sign Up</button>
-        </ul>
+        <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">current_user_email</a></p>
       </div>
     </div>
   </nav>
