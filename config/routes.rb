@@ -1,25 +1,15 @@
 Rails.application.routes.draw do
   get 'quiz/new'
-
   get 'sessions/login'
-
   get 'users/new'
-
   get 'home' => 'static_pages#home'
-
-  get 'static_pages/about'
-
   get 'about' => 'static_pages#about'
-
-  get 'static_pages/contact'
-
   get 'contact' => 'static_pages#contact'
-
   root 'static_pages#home'
   get 'login' => 'sessions#login'
   post 'login' => 'sessions#create'
-  delete '/logout',
-         to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy'
+  
   resources :users,
     only: [:new, :create],
     path_names: {new: "signup"}
