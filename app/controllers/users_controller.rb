@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -6,6 +11,7 @@ class UsersController < ApplicationController
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
   helper_method :current_user
 
   def create
@@ -13,8 +19,8 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:id] = @user.id
-      redirect_to root_path,
-        notice: "Thank you for signing up #{@user.first_name.capitalize}"
+      redirect_to @user,
+      notice: "Thank you for signing up #{@user.first_name.capitalize}"
     else
       render :new
     end
