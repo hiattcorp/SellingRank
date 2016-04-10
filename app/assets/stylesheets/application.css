@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-brand {
+  padding: 5px;
+}
+.navbar-brand>img {
+  height: 110%;
+  padding: 10px;
+  width: auto;
+}
