@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'quiz/new'
-  get 'sessions/login'
   get 'users/new'
   get 'home' => 'static_pages#home'
   get 'about' => 'static_pages#about'
