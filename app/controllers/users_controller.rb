@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   helper_method :current_user
 
   def create
@@ -23,6 +27,14 @@ class UsersController < ApplicationController
       notice: "Thank you for signing up #{@user.first_name.capitalize}"
     else
       render :new
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+    else
+      render 'edit'
     end
   end
 
