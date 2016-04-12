@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users,
-    only: [:new, :create, :show, :edit, :update],
-    path_names: {new: "signup"}
+    only: [:new, :create, :show, :edit],
+    path_names: {new: "signup", show: "profile"}
 
 
   # The priority is based upon order of creation: first created -> highest priority.

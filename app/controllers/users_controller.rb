@@ -24,19 +24,12 @@ class UsersController < ApplicationController
     if @user.save
       session[:id] = @user.id
       redirect_to @user,
-      notice: "Thank you for signing up #{@user.first_name.capitalize}"
+        notice: "Thank you for signing up #{@user.first_name.capitalize}"
     else
       render :new
     end
   end
 
-  def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-    else
-      render 'edit'
-    end
-  end
 
   private
 
