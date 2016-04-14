@@ -34,20 +34,20 @@
       <ul class="nav navbar-nav">
         <% is_current_page = current_page?(root_path) || current_page?(home_path) ? 'active' : '' %>
         <li class="<%= is_current_page %>">
-          <%= link_to 'Questions', "" %>
+          <%= link_to 'Home', "" %>
         </li>
         <li class="<%= current_page?(about_path) ? 'active' : '' %>"><%= link_to 'About', about_path %></li>
         <li class="<%= current_page?(contact_path) ? 'active' : '' %>"><%= link_to 'Contact', contact_path %></li>
       </ul>
-      <p class="navbar-text navbar-right"> <a href="#" class="navbar-link">
+      <p class="navbar-text navbar-right"><a href="#" class="navbar-link">
         <% if current_user %>
-          <%= "Signed in as #{current_user.email}" %><a/>
+          <%= link_to "Signed in as #{current_user.email}", user_path(current_user) %>
           <%= link_to 'Logout', logout_path, method: :delete %>
         <% else %>
           <%= link_to 'Signup', new_user_path %>
           <%= link_to 'Login', login_path %>
         <% end %>
-        </p>
+      </p>
     </div>
   </div>
 </nav>
