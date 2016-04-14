@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users,
-    only: [:new, :create, :show, :edit],
+    only: [:new, :create, :show, :edit, :update],
     path_names: {new: "signup", show: "profile"}
 
 
