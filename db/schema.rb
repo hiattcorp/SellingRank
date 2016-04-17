@@ -11,49 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409203658) do
+ActiveRecord::Schema.define(version: 20160417162730) do
 
-  create_table "survey_answers", force: :cascade do |t|
-    t.integer  "attempt_id"
+  create_table "options", force: :cascade do |t|
     t.integer  "question_id"
-    t.integer  "option_id"
-    t.boolean  "correct"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "answer"
+    t.integer  "points"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "survey_attempts", force: :cascade do |t|
-    t.integer "participant_id"
-    t.string  "participant_type"
-    t.integer "survey_id"
-    t.boolean "winner"
-    t.integer "score"
+  create_table "questions", force: :cascade do |t|
+    t.integer  "test_id"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "survey_options", force: :cascade do |t|
-    t.integer  "question_id"
-    t.integer  "weight",      default: 0
-    t.string   "text"
-    t.boolean  "correct"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "survey_questions", force: :cascade do |t|
-    t.integer  "survey_id"
-    t.string   "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "survey_surveys", force: :cascade do |t|
+  create_table "tests", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
-    t.integer  "attempts_number", default: 0
-    t.boolean  "finished",        default: false
-    t.boolean  "active",          default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
