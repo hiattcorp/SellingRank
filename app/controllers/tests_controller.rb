@@ -16,11 +16,13 @@ class TestsController < ApplicationController
   def new
     @test = Test.new
     @test.questions.build
+    @test.questions.each do |question|
+      question.options.build
+    end
   end
 
   # GET /tests/1/edit
   def edit
-    @test.questions.build
     @test.questions.each do |question|
       question.options.build
     end
@@ -74,7 +76,7 @@ class TestsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def test_params
-    params.require(:test).permit(:name, questions_attributes: [:content, :_destroy
-    ], options_attributes: [:answer, :points, :_destroy])
+    params.require(:test).permit(:name, questions_attributes: [:test_id, :content, :_destroy,
+      options_attributes: [:question_id, :answer, :points, :_destroy]])
   end
 end
