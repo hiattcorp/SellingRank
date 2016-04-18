@@ -13,5 +13,14 @@
 <dl class="dl-horizontal">
   <dt>Name:</dt>
   <dd><%= @test.name %></dd>
-
-</dl>
+  <dt>Questions:</dt>
+  <% if @test.questions.any? %>
+    <dd>
+      <ol>
+      <% @test.questions.each do |question| %>
+        <li><nl><%= question.content %></nl></li>
+      <% end %>
+      </ol>
+    </dd>
+    </dl>
+  <% end %>

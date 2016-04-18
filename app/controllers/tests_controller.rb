@@ -10,6 +10,7 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
+
   end
 
   # GET /tests/new
@@ -23,6 +24,7 @@ class TestsController < ApplicationController
 
   # GET /tests/1/edit
   def edit
+    @test.questions.build
     @test.questions.each do |question|
       question.options.build
     end
