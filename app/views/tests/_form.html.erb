@@ -20,12 +20,14 @@
     </div>
   </div>
 
-  <h2>Questions</h2>
+  <h4>Questions</h4>
   <%= f.fields_for :questions do |question_builder| %>
     <div class="question_fields">
       <div class="form-group">
         <%= question_builder.label :content, "Question", class: "col-sm-2 control-label" %><br>
-        <%= question_builder.text_field :content %>
+        <div class="col-sm-10">
+        <%= question_builder.text_field :content, class: "form-control" %>
+        </div>
         <%= question_builder.fields_for :options do |options_builder| %>
           </div>
           <dl class="dl-horizontal">
