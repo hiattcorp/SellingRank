@@ -16,18 +16,16 @@ class TestsController < ApplicationController
   # GET /tests/new
   def new
     @test = Test.new
-    @test.questions.build
-    @test.questions.each do |question|
-      question.options.build
+    1.times do
+      question = @test.questions.build
+      1.times { question.options.build }
     end
   end
 
   # GET /tests/1/edit
   def edit
-    @test.questions.each do |question|
-      question.options.build
+   @test = Test.find(params[:id])
     end
-  end
 
   # POST /tests
   # POST /tests.json

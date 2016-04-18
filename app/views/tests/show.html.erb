@@ -17,8 +17,8 @@
   <% if @test.questions.any? %>
     <dd>
       <ol>
-      <% @test.questions.each do |question| %>
-        <li><nl><%= question.content %></nl></li>
+      <% @test.questions.each do |builder| %>
+        <li><nl><%= builder.content %></nl></li>
       <% end %>
       </ol>
     </dd>
