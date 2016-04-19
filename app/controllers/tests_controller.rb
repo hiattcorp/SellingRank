@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_test, only: [:show, :edit, :update, :destroy, :take_test]
 
   # GET /tests
   # GET /tests.json
@@ -65,6 +65,9 @@ class TestsController < ApplicationController
       format.html { redirect_to tests_url, notice: 'Test was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def take_test
   end
 
   private
