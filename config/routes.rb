@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  path_names: {new: "tests", show: "profile"}
   get 'quiz/new'
   get 'users/new'
   get 'home' => 'static_pages#home'
@@ -16,6 +15,6 @@ Rails.application.routes.draw do
   resources :questions
   resources :options
 
-  resources :tests
+  resources :tests, path_names: {new: "tests", show: "profile"}
   get '/current_test/:id' => 'tests#take', as: 'take_test'
 end
