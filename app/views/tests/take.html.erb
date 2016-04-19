@@ -1,0 +1,28 @@
+<h1><%= @test.name %></h1>
+
+<hr />
+
+<%= nested_form_for @test do |f| %>
+
+  <div class="container">
+    <div class="row">
+      <h3>Questions</h3>
+    </div>
+      <%= f.fields_for :questions do |question_form| %>
+        <div class="row">
+          <div class="col-sm-8">
+            <%= question_form.text_field :content, disabled: true %>
+          </div>
+        </div>
+        <%= question_form.fields_for :options do |option_form| %>
+          <div class="row">
+            <div class="col-sm-4">
+              <%= option_form.text_field :answer, disabled: true %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+
+<%= f.submit class: "btn btn-primary" %>
+<% end %>
