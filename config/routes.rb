@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :tests
+  resources :tests,
+  path_names: {new: "tests", show: "profile"}
   get 'quiz/new'
   get 'users/new'
   get 'home' => 'static_pages#home'
