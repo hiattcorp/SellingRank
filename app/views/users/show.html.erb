@@ -1,14 +1,13 @@
 <div class="page-header">
 </div>
-<% provide(:title, @user.first_name) %>
+<%= provide(:title, current_user.first_name) %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
       <% if current_user %>
         <%= link_to "Edit Profile", edit_user_path(current_user) %>
-        <%= @user.email %>
+        <%= current_user.email %>
       <% end %>
     </section>
   </aside>
 </div>
-

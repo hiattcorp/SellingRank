@@ -1,22 +1,16 @@
 class UsersController < ApplicationController
+  helper_method :current_user
 
   def show
-    @user = User.find(params[:id])
   end
 
   def new
     @user = User.new
   end
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
-
-  helper_method :current_user
 
   def create
     @user = User.new(user_params)
@@ -30,8 +24,11 @@ class UsersController < ApplicationController
     end
   end
 
-
   private
+
+  def current_user
+    @current_user ||= User.find(session[:id]) if session[:id]
+  end
 
   def user_params
     params.require(:user).permit(

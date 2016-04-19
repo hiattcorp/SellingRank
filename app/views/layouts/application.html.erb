@@ -39,7 +39,7 @@
         <li class="<%= current_page?(about_path) ? 'active' : '' %>"><%= link_to 'About', about_path %></li>
         <li class="<%= current_page?(contact_path) ? 'active' : '' %>"><%= link_to 'Contact', contact_path %></li>
       </ul>
-      <p class="navbar-text navbar-right"><a href="#" class="navbar-link">
+      <p class="navbar-text navbar-right">
         <% if current_user %>
           <%= link_to "Signed in as #{current_user.email}", edit_user_path(current_user) %>
           <%= link_to 'Logout', logout_path, method: :delete %>
