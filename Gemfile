@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.4'
 
+gem 'nested_form'
 gem 'bootstrap-generators'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

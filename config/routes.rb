@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tests,
+  path_names: {new: "tests", show: "profile"}
   get 'quiz/new'
   get 'users/new'
   get 'home' => 'static_pages#home'
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   resources :users,
     only: [:new, :create, :show, :edit, :update],
     path_names: {new: "signup", show: "profile"}
+  resources :questions
+  resources :options
 
 
   # The priority is based upon order of creation: first created -> highest priority.
