@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy, :take_test]
+  before_action :set_test, only: [:show, :edit, :update, :destroy, :take]
 
   # GET /tests
   # GET /tests.json
@@ -67,7 +67,7 @@ class TestsController < ApplicationController
     end
   end
 
-  def take_test
+  def take
   end
 
   private
