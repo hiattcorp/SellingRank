@@ -15,7 +15,9 @@
           </div>
         </div>
         <div class="row">
-          <%= question_form.collection_check_boxes :options, @options, :id, :answer  %>
+            <%= question_form.collection_check_boxes(:options, @options, :id, :answer) do |option|  %>
+                <%= option.check_box %>  <%= option.label %>
+            <% end %>
         </div>
         <br/>
         <br/>
