@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   resources :tests, path_names: {new: "tests", show: "profile"}
   get '/current_test/:id' => 'tests#take', as: 'take_test'
+  get 'submit/:id' => 'tests#submit_test', as: 'submit'
 end

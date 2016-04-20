@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy, :take]
+  before_action :set_test, only: [:show, :edit, :update, :destroy, :take, :submit_test]
 
   # GET /tests
   # GET /tests.json
@@ -74,6 +74,10 @@ class TestsController < ApplicationController
         @options << option
       end
     end
+  end
+
+  def submit_test
+    @user = current_user
   end
 
   private

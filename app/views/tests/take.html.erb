@@ -2,7 +2,7 @@
 
 <hr />
 
-<%= nested_form_for @test do |f| %>
+<%= nested_form_for @test, url: submit_path do |f| %>
 
   <div class="container">
     <div class="row">
@@ -31,5 +31,5 @@
       <% end %>
   </div>
 
-<%= f.submit class: "btn btn-primary" %>
+<%= f.submit 'Submit Test', class: "btn btn-primary" %>
 <% end %>
