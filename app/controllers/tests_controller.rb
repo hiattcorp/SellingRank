@@ -68,6 +68,12 @@ class TestsController < ApplicationController
   end
 
   def take
+    @options = []
+    @test.questions.each do |question|
+      question.options.each do |option|
+        @options << option
+      end
+    end
   end
 
   private
