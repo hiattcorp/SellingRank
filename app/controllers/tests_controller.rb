@@ -47,7 +47,7 @@ class TestsController < ApplicationController
   # PATCH/PUT /tests/1.json
   def update
     respond_to do |format|
-      if @test.save
+      if @test.update(test_params)
         format.html { redirect_to @test, notice: 'Test was successfully updated.' }
         format.json { render :show, status: :ok, location: @test }
       else
@@ -75,7 +75,7 @@ class TestsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def test_params
-    params.require(:test).permit(:name, questions_attributes: [:test_id, :content, :_destroy,
-      options_attributes: [:question_id, :answer, :points, :_destroy]])
+    params.require(:test).permit(:name, questions_attributes: [:id, :test_id, :content, :_destroy,
+      options_attributes: [:id, :question_id, :answer, :points, :_destroy]])
   end
 end
