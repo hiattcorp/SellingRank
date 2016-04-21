@@ -72,6 +72,10 @@ class TestsController < ApplicationController
 
   def submit_test
     @user = current_user
+    respond_to do |format|
+      format.html { redirect_to tests_url, notice: 'Test submitted successfully' }
+      format.json { head :no_content }
+    end
   end
 
   private
