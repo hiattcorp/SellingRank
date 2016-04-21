@@ -17,15 +17,6 @@
                 <%= option.check_box %>  <%= option.label %>
             <% end %>
         </div>
-        <br/>
-        <br/>
-        <%= question_form.fields_for :options do |option_form| %>
-          <div class="row">
-            <div class="col-sm-4">
-              <%= option_form.text_field :answer, disabled: true %>
-            </div>
-          </div>
-        <% end %>
       <% end %>
   </div>
 
