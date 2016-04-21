@@ -1,5 +1,7 @@
 <% custom_action, custom_button = submit_path, 'Submit Test' if current_page?(action: 'take') %>
 
+<%= javascript_include_tag 'application' %>
+
 <%= nested_form_for @test, url: "#{custom_action}" do |f| %>
 
   <div class="container">
@@ -14,7 +16,7 @@
         </div>
         <div class="row">
             <%= question_form.collection_check_boxes(:options, @options.select {|o| o.question_id == question_form.object.id}, :points, :answer) do |option|  %>
-                <%= option.check_box %>  <%= option.label %>
+                <label><%= option.check_box %>  <%= option.label %></label>
             <% end %>
         </div>
       <% end %>
