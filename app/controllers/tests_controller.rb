@@ -71,7 +71,11 @@ class TestsController < ApplicationController
   end
 
   def submit_test
-    @user = current_user
+    @score = 0
+    params[:test][:questions_attributes].each do |k, v|
+      @score += v[:options].reduce(:+).to_i
+    end
+    Attempt.create(user_id: current_user.id, test_id: @test.id, score: @score)
     respond_to do |format|
       format.html { redirect_to tests_url, notice: 'Test submitted successfully' }
       format.json { head :no_content }
