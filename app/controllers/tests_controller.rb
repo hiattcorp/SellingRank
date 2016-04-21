@@ -1,5 +1,6 @@
 class TestsController < ApplicationController
   before_action :set_test, only: [:show, :edit, :update, :destroy, :take, :submit_test]
+  before_action :set_options, only: [:show, :take]
 
   # GET /tests
   # GET /tests.json
@@ -10,7 +11,6 @@ class TestsController < ApplicationController
   # GET /tests/1
   # GET /tests/1.json
   def show
-
   end
 
   # GET /tests/new
@@ -68,12 +68,6 @@ class TestsController < ApplicationController
   end
 
   def take
-    @options = []
-    @test.questions.each do |question|
-      question.options.each do |option|
-        @options << option
-      end
-    end
   end
 
   def submit_test
@@ -84,6 +78,15 @@ class TestsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_test
     @test = Test.find(params[:id])
+  end
+
+  def set_options
+    @options = []
+    @test.questions.each do |question|
+      question.options.each do |option|
+        @options << option
+      end
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

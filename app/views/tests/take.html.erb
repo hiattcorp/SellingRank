@@ -2,34 +2,4 @@
 
 <hr />
 
-<%= nested_form_for @test, url: submit_path do |f| %>
-
-  <div class="container">
-    <div class="row">
-      <h3>Questions</h3>
-    </div>
-      <%= f.fields_for :questions do |question_form| %>
-        <div class="row">
-          <div class="col-sm-8">
-            <%= question_form.text_field :content, disabled: true %>
-          </div>
-        </div>
-        <div class="row">
-            <%= question_form.collection_check_boxes(:options, @options, :id, :answer) do |option|  %>
-                <%= option.check_box %>  <%= option.label %>
-            <% end %>
-        </div>
-        <br/>
-        <br/>
-        <%= question_form.fields_for :options do |option_form| %>
-          <div class="row">
-            <div class="col-sm-4">
-              <%= option_form.text_field :answer, disabled: true %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-  </div>
-
-<%= f.submit 'Submit Test', class: "btn btn-primary" %>
-<% end %>
+<%= render 'take_form' %>
