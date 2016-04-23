@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :tests,
-  path_names: {new: "tests", show: "profile"}
+    path_names: {new: "tests", show: "profile"}
   get 'quiz/new'
   get 'users/new'
   get 'home' => 'static_pages#home'
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#login'
   post 'login' => 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
+  get "/auth/:provider/callback" => 'sessions#oauth'
   resources :users,
     only: [:new, :create, :show, :edit, :update],
     path_names: {new: "signup", show: "profile"}
