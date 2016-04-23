@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   helper_method :current_user
 
+
   def show
   end
 
@@ -14,10 +15,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       session[:id] = @user.id
-      redirect_to @user,
+      redirect_to root_path,
         notice: "Thank you for signing up #{@user.first_name.capitalize}"
     else
       render :new
@@ -33,7 +33,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :first_name, :last_name, :email,
-      :password, :password_confirmation
+      :password, :password_confirmation, :omniauth
     )
   end
 end
+
