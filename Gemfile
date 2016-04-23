@@ -5,6 +5,7 @@ ruby '2.2.4'
 gem 'nested_form'
 gem 'bootstrap-generators'
 
+gem "omniauth-google-oauth2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use SCSS for stylesheets
@@ -28,6 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -47,6 +50,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'quiet_assets'
   gem 'launchy'
+  gem 'dotenv-rails'
 end
 
 group :development do
