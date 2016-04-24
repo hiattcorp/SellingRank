@@ -9,14 +9,14 @@
       <h3>Questions</h3>
     </div>
       <%= f.fields_for :questions do |question_form| %>
-        <div class="row">
+        <div class="answer-row">
           <div class="col-sm-8">
             <%= question_form.text_field :content, disabled: true %>
           </div>
         </div>
         <div class="row">
             <%= question_form.collection_check_boxes(:options, @options.select {|o| o.question_id == question_form.object.id}, :points, :answer) do |option|  %>
-                <label><%= option.check_box %>  <%= option.label %></label>
+                <label><%= option.check_box %><%= option.label %></label>
             <% end %>
         </div>
       <% end %>
