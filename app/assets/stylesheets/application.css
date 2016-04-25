@@ -62,10 +62,12 @@ body {
   background-color: #2a2730;
 }
 
-@media (min-width: 992px)
+@media (min-width: 992px){
   .container {
     width: 970px;
   }
+}
+
 
   .answer-row {
   @include make-row;
