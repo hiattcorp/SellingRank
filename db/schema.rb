@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421014313) do
+ActiveRecord::Schema.define(version: 20160428025620) do
 
   create_table "attempts", force: :cascade do |t|
     t.integer  "test_id"
@@ -47,9 +47,10 @@ ActiveRecord::Schema.define(version: 20160421014313) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.boolean  "omniauth"
+    t.string   "role",            default: "basic"
   end
 
 end
