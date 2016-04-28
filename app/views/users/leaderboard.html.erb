@@ -8,19 +8,18 @@
     <tr>
       <th>First Name</th>
       <th>Last Initial</th>
-      <th>Score</th>
+      <th>High Score</th>
     </tr>
     </thead>
 
     <tbody>
     <% @users.each do |user| %>
-      <td><%= user.first_name %></td>
-      <td><%= user.last_name.first(1) %></td>
-      <% user.attempts.each do |attempts| %>
-        <td><%= attempts.score  %></td>
-      <% end %>
-      </tbody>
-      </table>
-      </div>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.attempts.order("score DESC").maximum(:score) %></td>
     <% end %>
-
+    </tr>
+    </tbody>
+  </table>
+</div>
