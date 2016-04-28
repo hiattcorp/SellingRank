@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  helper_method :current_user
+  load_and_authorize_resource
 
+  helper_method :current_user
 
   def show
   end
@@ -37,4 +38,3 @@ class UsersController < ApplicationController
     )
   end
 end
-
