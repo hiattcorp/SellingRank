@@ -9,8 +9,8 @@
       <th>Rank</th>
       <th>First Name</th>
       <th>Last Initial</th>
-      <th>Test 1 High Score</th>
-      <th>Test 2 High Score</th>
+      <th><%= link_to 'Aptitude', sort: 'score' %></th>
+      <th><%= link_to 'Data and Skills', sort: 'score' %></th>
     </tr>
     </thead>
 
@@ -20,8 +20,8 @@
         <td><%= index + 1 %></td>
         <td><%= user.first_name %></td>
         <td><%= user.last_name.first %></td>
-        <td><%= user.attempts.maximum( :score) %></td>
-        <td><%#= user.attempts.order("score DESC").maximum(:score, :test_id => "2" ) %></td>
+        <td><%= user.attempts.where(test_id: 1).maximum(:score) %></td>
+        <td><%= user.attempts.where(test_id: 2).maximum(:score) %></td>
     <% end %>
     </tr>
     </tbody>

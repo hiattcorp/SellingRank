@@ -10,6 +10,8 @@ class UsersController < ApplicationController
     @users = User.all
     @tests = Test.all
 
+
+
   end
 
   def new
