@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => [:reset_password]
+
   def login
   end
 
@@ -33,6 +35,15 @@ class SessionsController < ApplicationController
     else
       render 'users/new'
     end
+  end
+
+  def reset_password
+    @user = User.find_by_email(params[:email])
+    new_password = SecureRandom.hex(8)
+    @user.update(password: new_password, password_confirmation: new_password)
+    UserMailer.reset_password(@user.id, new_password).deliver
+    redirect_to root_path,
+      notice: "Your new password has been emailed to you."
   end
 
   private

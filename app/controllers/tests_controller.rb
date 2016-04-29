@@ -78,6 +78,7 @@ class TestsController < ApplicationController
       @score += v[:options].reduce(:+).to_i
     end
     Attempt.create(user_id: current_user.id, test_id: @test.id, score: @score)
+    UserMailer.email_test_score(current_user, @test.id, @score).deliver if current_user.test_notifications_enabled?
     respond_to do |format|
       format.html { redirect_to tests_url, notice: 'Test submitted successfully' }
       format.json { head :no_content }

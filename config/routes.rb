@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   resources :tests, path_names: {new: "tests", show: "profile"}
   get 'current_test/:id' => 'tests#take', as: 'take_test'
   patch 'submit/:id' => 'tests#submit_test', as: 'submit'
+  post 'submit_contact_form' => 'static_pages#submit_contact_form'
+  get 'password_reset_form' => 'static_pages#password_reset_form'
+  post 'reset_password' => 'sessions#reset_password'
 end
