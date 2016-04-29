@@ -25,4 +25,10 @@ class UserMailer < ApplicationMailer
     @attempts_left = 3 - Attempt.where(user_id: @user.id, test_id: test_id).count
     mail(to: @user.email, subject: "#{@test.name} Test Results")
   end
+
+  def reset_password(user_id, new_password)
+    @user = User.find(user_id)
+    @new_password = new_password
+    mail(to: @user.email, subject: 'Password Reset For Selling Rank Account')
+  end
 end

@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   patch 'submit/:id' => 'tests#submit_test', as: 'submit'
   post 'submit_contact_form' => 'static_pages#submit_contact_form'
   get 'password_reset_form' => 'static_pages#password_reset_form'
+  post 'reset_password' => 'sessions#reset_password'
 end
