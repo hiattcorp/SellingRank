@@ -6,6 +6,14 @@ class UsersController < ApplicationController
   def show
   end
 
+  def leaderboard
+    @users = User.all
+    @tests = Test.all
+
+
+
+  end
+
   def new
     @user = User.new
   end
