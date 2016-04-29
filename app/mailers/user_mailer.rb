@@ -15,6 +15,6 @@ class UserMailer < ApplicationMailer
     @email = params[:email]
     @phone = params[:phone]
     @message = params[:message]
-    mail(from: @email, to: 'timsjpark@gmail.com', subject: 'Support Ticket #123')
+    mail(from: @email, to: 'timparkdummy@gmail.com', subject: 'Support Ticket #123')
   end
 end
