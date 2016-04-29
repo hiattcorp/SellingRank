@@ -1,5 +1,7 @@
 <div class="page-header">
+  <% if current_user.admin? %>
   <%= link_to new_test_path, class: 'btn btn-primary' do %>
+    <% end %>
     <span class="glyphicon glyphicon-plus"></span>
     New Test
   <% end %>
