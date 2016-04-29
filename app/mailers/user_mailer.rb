@@ -17,4 +17,12 @@ class UserMailer < ApplicationMailer
     @message = params[:message]
     mail(from: @email, to: 'timparkdummy@gmail.com', subject: 'Support Ticket #123')
   end
+
+  def email_test_score(user, test_id, score)
+    @user = user
+    @test = Test.find(test_id)
+    @score = score
+    @attempts_left = 3 - Attempt.where(user_id: @user.id, test_id: test_id).count
+    mail(to: @user.email, subject: "#{@test.name} Test Results")
+  end
 end
