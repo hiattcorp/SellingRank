@@ -47,11 +47,10 @@ ActiveRecord::Schema.define(version: 20160429031220) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.boolean  "omniauth"
-    t.string   "role",                       default: "basic"
-    t.boolean  "test_notifications_enabled", default: true
+    t.string   "role",            default: "basic"
   end
 
 end

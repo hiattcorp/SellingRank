@@ -45,6 +45,7 @@ GEM
       railties (>= 3.1.0)
     builder (3.2.2)
     byebug (8.2.2)
+    cancancan (1.13.1)
     capybara (2.7.0)
       addressable
       mime-types (>= 1.16)
@@ -269,6 +270,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-generators
   byebug
+  cancancan
   capybara
   coffee-rails (~> 4.1.0)
   dotenv-rails

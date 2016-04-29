@@ -4,6 +4,7 @@ ruby '2.2.4'
 
 gem 'nested_form'
 gem 'bootstrap-generators'
+gem 'cancancan'
 gem 'figaro'
 
 gem "omniauth-google-oauth2"

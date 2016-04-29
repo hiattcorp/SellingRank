@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     path_names: {new: "tests", show: "profile"}
   get 'quiz/new'
   get 'users/new'
-  get 'home' => 'static_pages#home'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   root 'static_pages#home'
