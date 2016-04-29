@@ -13,6 +13,13 @@ class StaticPagesController < ApplicationController
   def user
   end
 
+  def submit_contact_form
+    UserMailer.submit_contact_form(params).deliver
+    redirect_to contact_path,
+      notice: "Thank you for emailing us! We will get back to you as soon as possible."
+  end
+
+
   def password_reset_form
   end
 end
