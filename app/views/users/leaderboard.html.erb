@@ -6,18 +6,22 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
     <tr>
+      <th>Rank</th>
       <th>First Name</th>
       <th>Last Initial</th>
-      <th>High Score</th>
+      <th>Test 1 High Score</th>
+      <th>Test 2 High Score</th>
     </tr>
     </thead>
 
     <tbody>
-    <% @users.each do |user| %>
+    <% @users.each_with_index do |user, index| %>
       <tr>
+        <td><%= index + 1 %></td>
         <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.attempts.order("score DESC").maximum(:score) %></td>
+        <td><%= user.last_name.first %></td>
+        <td><%= user.attempts.maximum( :score) %></td>
+        <td><%#= user.attempts.order("score DESC").maximum(:score, :test_id => "2" ) %></td>
     <% end %>
     </tr>
     </tbody>

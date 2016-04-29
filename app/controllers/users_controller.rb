@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def leaderboard
     @users = User.all
+    @tests = Test.all
 
   end
 
