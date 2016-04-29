@@ -16,3 +16,9 @@
 //= require bootstrap
 //= require_tree .
 //= require jquery_nested_form
+
+$(document).ready(function () {
+
+  $(".player").mb_YTPlayer();
+
+});
