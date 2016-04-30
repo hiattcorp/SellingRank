@@ -8,7 +8,7 @@ class Ability
       can :manage, :all
     elsif user.basic?
       can [:index, :take, :submit_test], Test
-      can [:show, :update, :leaderboard], User
+      can [:show, :update, :leaderboard, :create], User
     else
       can [:create, :leaderboard], User
     end
