@@ -17,7 +17,7 @@
       <%= content_tag_for(:tr, @users) do |user| %>
         <td><%= user.first_name %></td>
         <td><%= user.last_name.first %></td>
-        <td><%= @attempts.where(user_id: user.id).order(:score).last %></td>
+        <td><%= @attempts.where(user_id: user.id).order(:score).last.score %></td>
       <% end %>
     </tr>
     </tbody>
