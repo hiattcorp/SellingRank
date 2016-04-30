@@ -10,7 +10,7 @@ class Ability
       can [:index, :take, :submit_test], Test
       can [:show, :update, :leaderboard], User
     else
-      can [:create], User
+      can [:create, :leaderboard], User
     end
   end
 end
