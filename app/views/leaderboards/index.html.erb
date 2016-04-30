@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1>Listing tests</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>Test Name</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @tests.each do %>
+      <td> <%#= link_to show_leaderboard_path(@test) %> </td>
+      <td><%= link_to 'Show', leaderboard_path %></td>
+
+    <% end %>
+    </tbody>
+  </table>
+</div>
