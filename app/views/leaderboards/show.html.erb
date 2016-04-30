@@ -1,5 +1,6 @@
 <div class="page-header">
-  <h1>Leaderboard</h1>
+  <h1>Leaderboard:</h1>
+  <h2><%= @test.name %></h2>
 </div>
 
 <div class="table-responsive">
@@ -13,17 +14,16 @@
     </thead>
 
     <tbody>
-    <% @users.each do |user| %>
-      <% user.attempts.where(test_id: @test_id).order(:score).last %>
-      <tr>
+      <%= content_tag_for(:tr, @users) do |user| %>
         <td><%= user.first_name %></td>
         <td><%= user.last_name.first %></td>
-        <td><%= user.attempts.where(@test_id).maximum(:score) %></td>
-
-    <% end %>
+        <td><%= @attempts.where(user_id: user.id).order(:score).last %></td>
+      <% end %>
     </tr>
     </tbody>
   </table>
+
+  <% if @users.empty? %>
+    <h3>--- No users have taken this test ---</h3>
+  <% end %>
 </div>
-
-

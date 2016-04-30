@@ -38,7 +38,7 @@
         </li>
         <li class="<%= current_page?(about_path) ? 'active' : '' %>"><%= link_to 'About', about_path %></li>
         <li class="<%= current_page?(contact_path) ? 'active' : '' %>"><%= link_to 'Contact', contact_path %></li>
-        <li class="<%= current_page?(leaderboard_path) ? 'active' : '' %>"><%= link_to 'Leaderboard', leaderboard_path %></li>
+        <li class="<%= current_page?(leaderboards_path) ? 'active' : '' %>"><%= link_to 'Leaderboard', leaderboards_path %></li>
         <% if current_user %>
           <li class="<%= current_page?(tests_path) ? 'active' : '' %>"><%= link_to 'Tests', tests_path %></li>
         <% end %>

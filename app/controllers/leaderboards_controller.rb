@@ -4,7 +4,8 @@ class LeaderboardsController < ApplicationController
   end
 
   def show
-    @test_id = params[:id]
-    @users = User.all
+    @test = Test.find(params[:id])
+    @users = User.have_taken_test(@test.id)
+    @attempts = Attempt.where(test_id: @test.id)
   end
 end

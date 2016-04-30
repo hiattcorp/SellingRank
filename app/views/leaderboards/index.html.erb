@@ -7,15 +7,15 @@
     <thead>
     <tr>
       <th>Test Name</th>
+      <th></th>
     </tr>
     </thead>
 
     <tbody>
-    <% @tests.each do %>
-      <td> <%#= link_to show_leaderboard_path(@test) %> </td>
-      <td><%= link_to 'Show', leaderboard_path %></td>
-
-    <% end %>
+      <%= content_tag_for(:tr, @tests) do |test| %>
+        <td><%= test.name %></td>
+        <td><%= link_to "Show Leaderboard", show_leaderboard_path(test) %></td>
+      <% end %>
     </tbody>
   </table>
 </div>

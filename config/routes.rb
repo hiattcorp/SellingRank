@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
-  get 'show' => 'leaderboards#show'
-  get 'leaderboard' => 'leaderboards#index'
+  get 'show_leaderboard/:id' => 'leaderboards#show', as: 'show_leaderboard'
+  get 'leaderboards' => 'leaderboards#index'
 
   root 'static_pages#home'
   get 'login' => 'sessions#login'
