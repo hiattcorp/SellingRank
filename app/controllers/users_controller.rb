@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params.merge(role: 'basic'))
     if @user.save
       session[:id] = @user.id
       UserMailer.welcome_email(@user).deliver
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :first_name, :last_name, :email,
-      :password, :password_confirmation, :omniauth
+      :password, :password_confirmation, :omniauth, :role
     )
   end
 end

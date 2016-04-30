@@ -6,9 +6,11 @@ class Ability
 
     if user.admin?
       can :manage, :all
+    elsif user.basic?
+      can [:index, :take, :submit_test], Test
+      can [:show, :update, :leaderboard], User
     else
-    can [:index, :take, :submit_test], Test
-    can [:show, :update, :create, :leaderboard], User
+      can [:create, :leaderboard], User
     end
   end
 end
