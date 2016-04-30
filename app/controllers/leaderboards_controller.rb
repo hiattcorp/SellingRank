@@ -5,7 +5,7 @@ class LeaderboardsController < ApplicationController
 
   def show
     @test = Test.find(params[:id])
-    @users = User.includes(:attempts).where(attempts: {test_id: 15}).references(:attempts)
+    @users = User.have_taken_test(@test.id)
     @attempts = Attempt.where(test_id: @test.id)
   end
 end
