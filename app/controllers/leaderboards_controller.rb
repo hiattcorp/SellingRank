@@ -4,7 +4,8 @@ class LeaderboardsController < ApplicationController
   end
 
   def show
-    @test_id = params[:id]
-    @users = User.all
+    @test = Test.find(params[:id])
+    @users = User.includes(:attempts).where(attempts: {test_id: 15}).references(:attempts)
+    @attempts = Attempt.where(test_id: @test.id)
   end
 end
