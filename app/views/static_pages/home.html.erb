@@ -11,7 +11,12 @@
         <div class="col-lg-12 text-center">
           <h2>Global Ranking of Sales Professionals</h2>
           <h3>Where do you rank?</h3>
-          <a class="btn btn-lg btn-primary" href="/users/signup" role="button">Take The Assesment »</a>        </div>
+          <% if current_user %>
+            <a class="btn btn-lg btn-primary" href="/tests" role="button">Take An Assesment »</a>
+          <% else %>
+            <a class="btn btn-lg btn-primary" href="/users/signup" role="button">Take An Assesment »</a>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
