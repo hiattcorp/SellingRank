@@ -1,48 +1,33 @@
-<!-- Warming Up -->
-<link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
-<script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
-
-<!--Video Section-->
 <section class="content-section video-section">
-  <div class="pattern-overlay">
-    <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/embed/qtLOQS6Gpfg',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2>Global Ranking of Sales Professionals</h2>
-          <h3>Where do you rank?</h3>
-          <% if current_user %>
-            <a class="btn btn-lg btn-primary" href="/tests" role="button">Take An Assesment »</a>
-          <% else %>
-            <a class="btn btn-lg btn-primary" href="/users/signup" role="button">Take An Assesment »</a>
-          <% end %>
-        </div>
-      </div>
+<div class="fullscreen-bg">
+  <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+    <source src="video/NYC-Traffic.webm" type="video/webm">
+    <source src="video/NYC-Traffic.mp4" type="video/mp4">
+    <source src="video/NYC-Traffic.ogg" type="video/ogg">
+  </video>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2>Global Ranking of Sales Professionals</h2>
+      <h3>Where do you rank?</h3>
+      <% if current_user %>
+        <a class="btn btn-lg btn-primary" href="/tests" role="button">Take An Assesment »</a>
+      <% else %>
+        <a class="btn btn-lg btn-primary" href="/users/signup" role="button">Take An Assesment »</a>
+      <% end %>
     </div>
   </div>
-</section>
-<!--Video Section Ends Here-->
-
-
-
-<div class="col-md-9">
-  <h1 class="page-header">"What is SellingRank?</h1>
-
-  <p class="lead">SellingRank.com is the first company in the world dedicated to the training and global ranking of
-    sales professionals.
-  </p>
-  <p class="lead">That sounds great but why does the world need this?
-  </p>
-  <p>
-    For decades salespeople and companies have paid a great deal of money to test salespeople in an effort to determine
-    their aptitude for sales. We thought it was time to change that model, not only do we test for aptitude but we test
-    score and rank based on performance history and skills. Salespeople can then use their rank on resumes and with
-    recruiters, to boast on LinkedIn, or simply compete with your colleagues.
-
-    This is just the beginning, we have many iterations and changes in the coming months and years.
-  </p>
-
 </div>
+</section>
+
+
+
+
+
+
+
+
 
 
 
