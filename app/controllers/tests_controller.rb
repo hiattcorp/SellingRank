@@ -2,8 +2,7 @@ class TestsController < ApplicationController
   load_and_authorize_resource
 
   before_action :set_test, only: [:show, :edit, :update, :destroy, :take, :submit_test]
-  before_action :set_options, only: [:show, :take]
-  
+
   # GET /tests
   # GET /tests.json
   def index

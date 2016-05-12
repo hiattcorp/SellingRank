@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="row">
-            <%= question_form.collection_check_boxes(:options, @options.select {|o| o.question_id == question_form.object.id}, :points, :answer) do |option|  %>
+            <%= question_form.collection_check_boxes(:options, Option.where(question_id: question_form.object.id), :points, :answer) do |option|  %>
                 <label><%= option.check_box %><%= option.label %></label>
             <% end %>
         </div>
